@@ -1,12 +1,11 @@
 = Keycloak
-Elvis Rocha <elvis.rocha@tse.jus.br>
 
 {nbsp} +
 
 [[prova-de-conceito]]
 == Prova de Conceito
   
-  A prova de conceito do Keycloak consiste em avaliar a ferramenta com base nas necessidades de autenticação e autorização do TSE.
+  A prova de conceito do Keycloak consiste em avaliar a ferramenta com base nas necessidades de autenticação e autorização.
   O objetivo é garantir a integração dos mecanismos de autenticação hoje utilizados, promover uma gerência única dos acessos no modelo 'self-service' e customização dos cenários para promover o baixo acoplamento das aplicações-cliente e a diminuição da complexidade de integração.
   
 {nbsp} +
@@ -17,18 +16,12 @@ Elvis Rocha <elvis.rocha@tse.jus.br>
   . Configuração do Keycloak Server
   .. Definição de Federação de Dados com o Active Directory
   .. Definição de Federação de Dados com o AcessoJE
-  .. Definição do Identity Provider ODIN
+  .. Definição do Identity Provider OD
   . Integração das aplicações
-  .. Integração de aplicações que usam o ODIN
-  ... Integração do link:http://git.tse.jus.br/corporativa/fasi/tree/master/08_provas_de_conceitos/keycloak/apoiamento/sapf-interno-apresentacao[SAPF-Interno]
-  ... Integração do link:http://git.tse.jus.br/corporativa/fasi/tree/master/08_provas_de_conceitos/keycloak/apoiamento/sapf-externo-apresentacao[SAPF-Externo]
+  .. Integração de aplicações que usam o OD
   .. Integração de uma aplicação Mobile
-  ... Integração do link:http://git.tse.jus.br/corporativa/fasi/tree/master/08_provas_de_conceitos/keycloak/divulgaCandMobile[DivulgaCandMobile (IONIC 2)]
   .. Integração de uma aplicação de Portal
-  ... Integração do link:http://git.tse.jus.br/corporativa/fasi/tree/master/08_provas_de_conceitos/keycloak/plone[Portal TSE (Plone)]
   .. Integração de aplicações que usam o Acesso
-  ... Integração do link:http://git.tse.jus.br/corporativa/fasi/tree/master/08_provas_de_conceitos/keycloak/delphi[SRH (Delphi)]
-  ... Integração do link:http://git.tse.jus.br/corporativa/fasi/tree/master/08_provas_de_conceitos/keycloak/casti[CASTI]
 
 {nbsp} +
 
@@ -344,25 +337,22 @@ Added 'admin' to 'domain/servers/server-one/configuration/keycloak-add-user.json
 +
 .. Definição do REALM: TSE
 +
-image::http://git.tse.jus.br/corporativa/fasi/raw/master/08_provas_de_conceitos/keycloak/imagens/keycloak1.PNG[]
+image::http://imagens/keycloak1.PNG[]
 .. Aplicar configurações de internacionalização
 +
-image::http://git.tse.jus.br/corporativa/fasi/raw/master/08_provas_de_conceitos/keycloak/imagens/keycloak2.PNG[]
+image::http://imagens/keycloak2.PNG[]
 .. No menu User Federation, adicionar um provider do tipo LDAP:
 +
-image::http://git.tse.jus.br/corporativa/fasi/raw/master/08_provas_de_conceitos/keycloak/imagens/keycloak3.PNG[]
-*Connection URL:* ldap://tse.gov.br:389 +
-*Users DN:* OU=Tse,DC=tse,DC=gov,DC=br +
-*Usuário de Bind DN:* cn=sv_integracao,ou=servicos,ou=tse,dc=tse,dc=gov,dc=br +
+image::http://imagens/keycloak3.PNG[]
+*Connection URL:* ldap://ldap.url.com:389 +
+*Users DN:* OU=company,DC=com +
+*Usuário de Bind DN:* cn=user,ou=company,dc=company,dc=com +
 *Custom User LDAP Filter:* (&(objectCategory=Person)(sAMAccountName= * )) +
 *Search Scope:* Subtree +
 .. Data Mappers no LDAP:
 +
-image::http://git.tse.jus.br/corporativa/fasi/raw/master/08_provas_de_conceitos/keycloak/imagens/keycloak4.PNG[]
+image::http://imagens/keycloak4.PNG[]
 +
-.. Exemplo do título eleitoral:
-+
-image::http://git.tse.jus.br/corporativa/fasi/raw/master/08_provas_de_conceitos/keycloak/imagens/keycloak5.PNG[]
 
 [[clientes]]
 == Clientes Keycloak
@@ -420,30 +410,7 @@ Definir o usuário: admin  senha: redhat@123
 {nbsp} +
 {nbsp} +
 
-=== Configuração dos clientes ODIN
-
-{nbsp} +
-
-==== Configuração do *SAPF-Externo*
-
-A documentação da configuração do SAPF-Externo está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/apoiamento/sapf-externo-apresentacao/README.md[raiz do projeto]
-
-{nbsp} +
-
-==== Configuração do *SAPF-Interno*
-
-A documentação da configuração do SAPF-Interno está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/apoiamento/sapf-interno-apresentacao/README.md[raiz do projeto]
-
-{nbsp} +
-{nbsp} +
-
-=== Configuração do cliente Mobile
-
-{nbsp} +
-
-==== Configuração do *DivulgaCandMobile*
-
-A documentação da configuração do DivulgaCandMobile está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/divulgaCandMobile/README.md[raiz do projeto]
+=== Configuração dos clientes OD
 
 {nbsp} +
 {nbsp} +
@@ -452,41 +419,3 @@ A documentação da configuração do DivulgaCandMobile está disponível na lin
 
 {nbsp} +
 
-==== Configuração do *Portal TSE*
-
-A documentação da configuração do Portal TSE está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/plone/README.md[raiz do projeto]
-
-{nbsp} +
-{nbsp} +
-
-=== Configuração do cliente Delphi
-
-{nbsp} +
-
-==== Configuração do *Acesso Cliente*
-
-A documentação da configuração do Acesso Cliente está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/delphi/README.md[raiz do projeto]
-
-{nbsp} +
-{nbsp} +
-
-=== Configuração de um cliente Java do AcessoJE
-
-{nbsp} +
-
-==== Configuração do *CASTI*
-
-A documentação da configuração do CASTI está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/casti/README.md[raiz do projeto]
-
-{nbsp} +
-{nbsp} +
-
-=== Criação do adapter para importação e sincronia de dados do Keycloak com o AcessoJE
-
-{nbsp} +
-
-==== Criação e configuração do *Adapter para federação de dados com o AcessoJE*
-
-A documentação da criação e configuração do Adapter AcessoJE está disponível na link:http://git.tse.jus.br/corporativa/fasi/blob/master/08_provas_de_conceitos/keycloak/acessoFederationProvider/README.md[raiz do projeto]
-
-{nbsp} +
