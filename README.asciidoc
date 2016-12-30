@@ -2,10 +2,10 @@
 
 {nbsp} +
 
-[[prova-de-conceito]]
-== Prova de Conceito
+[[proof-of-concept]]
+== Proof of Concept
   
-  A prova de conceito do Keycloak consiste em avaliar a ferramenta com base nas necessidades de autenticação e autorização.
+  This Keycloak PoC have the goal the evaluation accordingly to the common needs in the enterprise about authentication and authorizationprova de conceito do Keycloak.
   O objetivo é garantir a integração dos mecanismos de autenticação hoje utilizados, promover uma gerência única dos acessos no modelo 'self-service' e customização dos cenários para promover o baixo acoplamento das aplicações-cliente e a diminuição da complexidade de integração.
   
 {nbsp} +
