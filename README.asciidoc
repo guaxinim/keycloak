@@ -5,23 +5,23 @@
 [[proof-of-concept]]
 == Proof of Concept
   
-  This Keycloak PoC have the goal the evaluation accordingly to the common needs in the enterprise about authentication and authorizationprova de conceito do Keycloak.
-  O objetivo é garantir a integração dos mecanismos de autenticação hoje utilizados, promover uma gerência única dos acessos no modelo 'self-service' e customização dos cenários para promover o baixo acoplamento das aplicações-cliente e a diminuição da complexidade de integração.
+  This Keycloak PoC have the goal the evaluation accordingly to the common needs in the enterprise about authentication and authorization.
+  The main needs are be a unique aithentication and authorization service, act as Identity Provider but as well as Identity Broker, promote a self-service access model, be able to be customizable for specific scenarios.
   
 {nbsp} +
 
-*A prova de conceito do Keycloak envolveu os seguintes passos:*
+*The proof of concept have the following steps:*
 
-  . Instalação do Keycloak Server
-  . Configuração do Keycloak Server
-  .. Definição de Federação de Dados com o Active Directory
-  .. Definição de Federação de Dados com o AcessoJE
-  .. Definição do Identity Provider OD
-  . Integração das aplicações
-  .. Integração de aplicações que usam o OD
-  .. Integração de uma aplicação Mobile
-  .. Integração de uma aplicação de Portal
-  .. Integração de aplicações que usam o Acesso
+  . Instalation of Keycloak Server
+  . Keycloak Server Configuration
+  .. Data Federation Definition with Active Directory
+  .. Data Federation Definition with a Database
+  .. Definition of Keycloak as a Security Provider for another Identity Provider
+  . Integration of aplications
+  .. One Application that uses a secondary Identity Provider
+  .. Integration of a Mobile app
+  .. Integration of a Portal application
+  .. Integration of apps using Spring Security
 
 {nbsp} +
 
