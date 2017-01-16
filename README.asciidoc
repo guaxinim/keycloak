@@ -25,13 +25,12 @@
 
 {nbsp} +
 
-[[papeis]]
-=== Papéis necessários com a utilização do Keycloak
+[[Roles]]
+=== Defined Roles to use with Keycloak
 
-. *Mantenedor*
+. *Mantainer*
 +
-Perfil responsável por manter e administrar do ponto de vista de infraestrutura o servidor onde o Keycloak será hospedado e o serviço do Keycloak.
-Não é exigido uma expertise maior do profissional de operações visto que o Keycloak é apenas um JBoss que possui módulos adicionais para fazer essa função.
+Role responsible for keycloak server administration.
 
 . *Administrador*
 +
